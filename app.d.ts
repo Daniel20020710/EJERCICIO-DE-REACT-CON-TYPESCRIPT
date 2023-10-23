@@ -1,0 +1,1 @@
+type ImageItem = { id: String, url: String }

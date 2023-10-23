@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2px; /* Espacio entre imágenes */
+}
+
+.image-container {
+  flex: 0 0 calc(25% - 20px); /* Ajusta el tamaño de las imágenes aquí para 4 imágenes por fila */
+  margin-bottom: 20px; /* Espacio entre filas */
+  transition: ease-in 0.3s; /* Transición para suavizar el efecto */
+  position: relative;
+  overflow: hidden;
+}
+.image-container img {
+  /* Establece el tamaño de la imagen */
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease; /* Transición para suavizar el efecto */
+
+  /* Efecto de escala al hacer hover en la imagen */
+  transform: scale(1);
+}
+.image-container:hover img {
+  filter: brightness(1.1); /* Ajusta el valor para la intensidad del brillo */
+  /* También puedes cambiar la propiedad 'filter' para cambiar el color del brillo */
+  transform: scale(1.05);
+  /* Agrega sombra de neón naranja por debajo de la imagen */
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.8); /* Color naranja: rgba(255, 165, 0, 0.7) */
+}
+
+.add-zorro-button {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0; /* Ajusta el valor según la altura que desees */
+  z-index: 1; /* Ajusta el valor si es necesario para que esté por encima del contenido */
+  left: 0; /* Inicialmente, el botón está en la parte superior izquierda */
+  transition: left 0.3s; /* Agrega una transición a la propiedad left */
+}
+.add-zorro-button.scrolled {
+  position: fixed;
+  top: 10px;
+  left: calc(100% - 200px); /* Ajusta la posición a la derecha según tus necesidades */
+  transition: left 0.3s; /* Agrega una transición para suavizar el movimiento */
+}
